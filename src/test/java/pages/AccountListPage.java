@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 
 public class AccountListPage extends BasePage {
     public static final By NEW_BUTTON = By.cssSelector("[title=New]");
-    By icon = By.cssSelector("img[title=Contacts]");
+    By icon = By.cssSelector("img[title=Accounts]");
 
     public AccountListPage(WebDriver driver) {
         super(driver);
@@ -16,8 +16,13 @@ public class AccountListPage extends BasePage {
     }
 
     public AccountListPage open() {
-        driver.get(BASE_URL + "/lightning/o/Contact/list?filterName=Recent");
+        driver.get(BASE_URL + "lightning/o/Account/list?filterName=Recent");
         return this;
+    }
+
+    public AccountModal clickNew() {
+        driver.findElement(NEW_BUTTON).click();
+        return new AccountModal(driver);
     }
 
 }
