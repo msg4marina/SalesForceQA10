@@ -14,7 +14,7 @@ public class AccountTest extends BaseTest {
                 .isPageOpened();
         assertTrue(isOpened, "Страница логина не открылась");
         isOpened = loginPage
-                .login("dmitryrak11-fcsk@force.com", "password01")
+                .login("legal.verdegrano-nhse@force.com", "2Password")
                 .isPageOpened();
         assertTrue(isOpened, "Home Page не открылась");
 
