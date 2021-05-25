@@ -24,4 +24,4 @@ public class AccountDetailsPage extends BasePage {
     public void validateAccount(Account account) {
         validateInput("Account Name", account.getAccountName());
     }
-}
+    }

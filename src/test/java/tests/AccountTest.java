@@ -1,10 +1,7 @@
 package tests;
-
 import models.Account;
 import org.testng.annotations.Test;
-
 import static org.testng.Assert.assertTrue;
-
 public class AccountTest extends BaseTest {
 
     @Test
@@ -21,7 +18,8 @@ public class AccountTest extends BaseTest {
         //FACTORY
         //BUILDER
         //RANDOM DATA
-        Account account = new Account("Test", "+375293350019", "tut.by");
+        Account account = new Account("NextTest", "+3758778676", "tut.by", "beginner",
+                "Masherova str.29", "Pobediteley avenue, 18");
 
         accountListPage
                 .open()
