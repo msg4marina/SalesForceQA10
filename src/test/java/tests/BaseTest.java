@@ -6,13 +6,15 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 import pages.AccountListPage;
 import pages.HomePage;
 import pages.LoginPage;
-
 import java.util.concurrent.TimeUnit;
 
-public class BaseTest {
+@Listeners(TestListener.class)
+
+public abstract class BaseTest {
     WebDriver driver;
     LoginPage loginPage;
     AccountListPage accountListPage;
