@@ -1,11 +1,13 @@
 package tests;
-import org.openqa.selenium.By;
 import org.testng.annotations.Test;
+import tests.base.BaseTest;
+import tests.base.Retry;
+
 import static org.testng.Assert.assertTrue;
 
 public class LoginTest extends BaseTest {
 
-    @Test (retryAnalyzer = Retry.class)
+    @Test (retryAnalyzer = Retry.class, description = "login")
     public void login() {
         boolean isOpened = loginPage
                 .open()
