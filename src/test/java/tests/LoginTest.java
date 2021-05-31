@@ -1,20 +1,23 @@
 package tests;
-
-import org.openqa.selenium.By;
 import org.testng.annotations.Test;
+import tests.base.BaseTest;
+import tests.base.Retry;
+
 import static org.testng.Assert.assertTrue;
 
 public class LoginTest extends BaseTest {
 
-    @Test
+    @Test (retryAnalyzer = Retry.class, description = "login")
     public void login() {
         boolean isOpened = loginPage
                 .open()
                 .isPageOpened();
         assertTrue(isOpened, "Страница логина не открылась");
         isOpened = loginPage
-                .login("msg4marina-kbe6@force.com", "1marinamaslova")
+                .login("legal.verdegrano-nhse@force.com", "2Password")
                 .isPageOpened();
         assertTrue(isOpened, "Home Page не открылась");
     }
+
+
 }

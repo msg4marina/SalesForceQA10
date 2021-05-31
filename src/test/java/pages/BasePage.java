@@ -5,8 +5,10 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import static org.testng.Assert.assertEquals;
+
 public abstract class BasePage {
-    public static final String BASE_URL = "https://kyriba2.lightning.force.com/";
+    public static final String BASE_URL = "https://tmsqa10.lightning.force.com/";
     WebDriver driver;
     WebDriverWait wait;
 
@@ -25,5 +27,13 @@ public abstract class BasePage {
             System.out.println(exception.getMessage());
             return false;
         }
+    }
+
+    public void validateInput(String label, String expected) {
+        String locator = "//div[contains(@class,'active')]//span[text()='%s']/ancestor::force-record-layout-item//lightning-formatted-text";
+        assertEquals(
+                driver.findElement(By.xpath(String.format(locator, label))).getText(),
+                expected,
+                "Input text is not correct");
     }
 }
