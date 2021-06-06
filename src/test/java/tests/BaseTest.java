@@ -7,8 +7,9 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import pages.AccountListPage;
-import pages.HomePage;
 import pages.LoginPage;
+import tests.base.TestListener;
+
 import java.util.concurrent.TimeUnit;
 
 @Listeners(TestListener.class)
@@ -24,16 +25,14 @@ public abstract class BaseTest {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--start-maximized");
         options.addArguments("--disable-notifications");
+
         driver = new ChromeDriver(options);
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         driver.manage().window().maximize();
         loginPage = new LoginPage(driver);
         accountListPage = new AccountListPage(driver);
-
     }
-
     @AfterMethod(alwaysRun = true)
-    public void tearDown() {
-        driver.quit();
+    public void tearDown() { driver.quit();
     }
 }

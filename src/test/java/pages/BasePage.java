@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import static org.testng.Assert.assertEquals;
 
 public abstract class BasePage {
-    public static final String BASE_URL = "https://tmsqa10.lightning.force.com/";
+    public static final String BASE_URL = "https://tmsqa102.lightning.force.com/";
     WebDriver driver;
     WebDriverWait wait;
 

@@ -7,7 +7,7 @@ public class TextArea {
     WebDriver driver;
     String label;
     String textAreaLocator = "//*[contains(@class,'modal-body')]//span[text()='%s']/ancestor::div" +
-            "[contains(@class, 'textarea')]//textarea";
+            "[contains(@class, 'uiInputTextArea')]//textarea";
 
     public TextArea(WebDriver driver, String label) {
         this.driver = driver;
