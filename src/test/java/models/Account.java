@@ -8,7 +8,6 @@ public class Account {
     String billingStreet;
     String shippingStreet;
 
-
     public Account() {
     }
 
