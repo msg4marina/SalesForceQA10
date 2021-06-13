@@ -1,10 +1,12 @@
 package tests;
+import io.qameta.allure.Step;
 import models.Account;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertTrue;
 public class AccountTest extends BaseTest {
 
+    @Step ("Open the Login page and create new account")
     @Test (description = "account should be created")
     public void accountShouldBeCreated() {
         boolean isOpened = loginPage
@@ -16,9 +18,7 @@ public class AccountTest extends BaseTest {
                 .isPageOpened();
         assertTrue(isOpened, "Home Page не открылась");
 
-        //FACTORY
-        //BUILDER
-        //RANDOM DATA
+        /*FACTORY  //BUILDER  //RANDOM DATA*/
         Account account = new Account("NextTest", "+3758778676", "tut.by", "beginner",
                 "Masherova str.29", "Pobediteley avenue, 18");
 
