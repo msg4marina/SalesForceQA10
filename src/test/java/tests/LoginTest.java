@@ -1,4 +1,5 @@
 package tests;
+import io.qameta.allure.Step;
 import org.testng.annotations.Test;
 import tests.base.Retry;
 
@@ -6,6 +7,7 @@ import static org.testng.Assert.assertTrue;
 
 public class LoginTest extends BaseTest {
 
+    @Step ("Open Salesforce site and create new login")
     @Test (retryAnalyzer = Retry.class, description = "login")
     public void login() {
         boolean isOpened = loginPage
